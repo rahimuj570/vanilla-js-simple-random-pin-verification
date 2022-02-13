@@ -45,6 +45,9 @@ for (let btn of btnElem) {
     document.getElementById("pin-verify-display").value += buttonText;
     if (buttonText === "AC") {
       document.getElementById("pin-verify-display").value = "";
+      document.getElementById("error-notify").style.display = "none";
+      document.getElementById("demo-notify").style.display = "block";
+      document.getElementById("success-notify").style.display = "none";
     } else if (buttonText === "C") {
       document.getElementById("pin-verify-display").value = document
         .getElementById("pin-verify-display")
