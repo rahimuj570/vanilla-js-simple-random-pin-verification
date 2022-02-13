@@ -39,6 +39,16 @@ document.querySelector(".submit-btn").addEventListener("click", function () {
 
 // ------------BUTTON CLICK------------
 const btnElem = document.getElementsByClassName("button");
-for (const btn of btnElem) {
-  console.log(btn.innerText);
+for (let btn of btnElem) {
+  btn.addEventListener("click", function (e) {
+    const buttonText = e.target.innerText;
+    document.getElementById("pin-verify-display").value += buttonText;
+    if (buttonText === "AC") {
+      document.getElementById("pin-verify-display").value = "";
+    } else if (buttonText === "C") {
+      document.getElementById("pin-verify-display").value = document
+        .getElementById("pin-verify-display")
+        .value.slice(0, -2);
+    }
+  });
 }
